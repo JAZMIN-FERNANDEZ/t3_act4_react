@@ -1,8 +1,14 @@
 import { useState } from "react";
 import Tarea from "./Tarea";
+import "./App.css";
 
 function Encabezado() {
-  return <h1>Mi lista de tareas</h1>;
+  return (
+    <div className="encabezado">
+      <h1>Mi lista de tareas</h1>
+      <p className="subtitulo">JAZMIN</p>
+    </div>
+  );
 }
 
 function App() {
@@ -23,16 +29,20 @@ function App() {
   };
 
   return (
-    <div>
-      <Encabezado />
-      <input value={nueva} onChange={(e) => setNueva(e.target.value)} placeholder="Nueva tarea" />
-      <button onClick={agregar}>Agregar</button>
-      {tareas.length === 0 && <p>No hay tareas</p>}
-      <ul>
-        {tareas.map((t) => (
-          <Tarea key={t.id} texto={t.texto} hecha={t.hecha} onAlternar={() => alternar(t.id)} />
-        ))}
-      </ul>
+    <div className="pagina">
+      <div className="contenedor">
+        <Encabezado />
+        <div className="formulario">
+          <input value={nueva} onChange={(e) => setNueva(e.target.value)} placeholder="Nueva tarea" />
+          <button onClick={agregar}>Agregar</button>
+        </div>
+        {tareas.length === 0 && <p className="vacio">No hay tareas</p>}
+        <ul className="lista">
+          {tareas.map((t) => (
+            <Tarea key={t.id} texto={t.texto} hecha={t.hecha} onAlternar={() => alternar(t.id)} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

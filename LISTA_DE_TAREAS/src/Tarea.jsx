@@ -1,9 +1,7 @@
 function Tarea({ texto, hecha, onAlternar }) {
   return (
-    <li
-      onClick={onAlternar}
-      style={{ textDecoration: hecha ? "line-through" : "none", cursor: "pointer" }}
-    >
+    <li className={hecha ? "tarea hecha" : "tarea"} onClick={onAlternar}>
+      <span className="check">{hecha ? "✓" : ""}</span>
       {texto}
     </li>
   );
