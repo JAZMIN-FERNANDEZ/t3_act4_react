@@ -35,4 +35,4 @@ Porque la key le permite a React identifica cada elemento de la lista de forma Ã
 https://github.com/JAZMIN-FERNANDEZ/t3_act4_react
 
 **e) Enlace de mi proyecto desplegado en GitHub Pages**
-
+https://jazmin-fernandez.github.io/t3_act4_react/
